@@ -1,0 +1,24 @@
+R_DEF: Internal format may change without notice
+local
+color dark_text
+color level_best_color
+color level_frozen_color
+color level_high_color
+color level_middle_color
+color level_normal_color
+id chart
+id extra_info
+id fps_view
+id level_frozen
+id level_high
+id level_middle
+id level_normal
+id qi_wang_tv
+id scene_view
+id sum_level_frozen
+id sum_level_high
+id sum_level_middle
+id sum_level_normal
+id sum_qi_wang_tv
+layout float_frame_view
+string app_name

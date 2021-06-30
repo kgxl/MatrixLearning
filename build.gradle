@@ -1,0 +1,66 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.5.0"
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath ("com.tencent.matrix:matrix-gradle-plugin:${MATRIX_VERSION}") { changing = true }
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+
+ext {
+    // For android sub-projects
+    minSdkVersion = 19
+    targetSdkVersion = 29
+    compileSdkVersion = 29
+    buildToolsVersion = '29.0.2'
+
+    MIN_SDK_VERSION_FOR_HOOK = 21
+
+    VERSION_CODE = 1
+
+    javaVersion = JavaVersion.VERSION_1_8
+
+    GROUP = 'com.tencent.matrix'
+    VERSION_NAME = "1.0.0"
+
+    POM_PACKAGING = "pom"
+    POM_NAME = "Matrix for Android"
+    POM_DESCRIPTION = "Matrix is an APM (Application Performance Manage) used in Wechat to monitor, locate and analyse performance problems. It is a plugin style, non-invasive solution and is currently available on iOS, macOS and Android."
+
+    POM_URL = "https://github.com/Tencent/Matrix"
+    POM_SCM_URL = "https://github.com/Tencent/Matrix.git"
+    POM_SCM_COMMIT = ""
+    POM_ISSUE_URL = 'https://github.com/Tencent/Matrix/issues'
+
+    POM_LICENCE_NAME = "BSD License"
+    POM_LICENCE_URL = "https://opensource.org/licenses/BSD-3-Clause"
+    POM_LICENCE_DIST = "repo"
+
+    POM_DEVELOPER_ID = "Tencent Wechat"
+    POM_DEVELOPER_NAME = "Tencent Wechat, Inc."
+
+    BINTRAY_LICENCE = ['BSD 3-Clause']
+    BINTRAY_ORGANIZATION = "matrix"
+
+    ABI_FILTERS = ['armeabi-v7a', 'arm64-v8a']
+    LOGGER_VERSION = 1.1 // fixme logger
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

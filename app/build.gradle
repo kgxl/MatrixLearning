@@ -1,0 +1,86 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.tencent.matrix-plugin'
+}
+
+matrix {
+    trace {
+        enable = true    //if you don't want to use trace canary, set false
+        baseMethodMapFile = "${project.buildDir}/matrix_output/Debug.methodmap"
+        blackListFile = "${project.projectDir}/matrixTrace/blackMethodList.txt"
+    }
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.shifang.matrixdemo"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+task Testproperties() {
+    boolean name = project.hasProperty("zname")
+    println "$name"
+    if (name) {
+        println "name = " + project.getProperties().get("zname")
+    }else{
+        println "not exist"
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation project(':matrix-trace-canary')
+
+    //微信matrix
+    def matrixModules = [
+//            "matrix-commons",
+//            "matrix-battery-canary",
+            "matrix-android-lib",
+//            "matrix-android-commons",
+            "matrix-trace-canary",
+//            "matrix-resource-canary-android",
+//            "matrix-resource-canary-common",
+//            "matrix-io-canary",
+//            "matrix-sqlite-lint-android-sdk",
+    ]
+
+    matrixModules.each { moduleName ->
+        if (rootProject.subprojects.any { (it.name == moduleName) }) {
+            implementation project(":${moduleName}")
+        } else {
+            implementation group: "com.tencent.matrix", name: moduleName, version: MATRIX_VERSION, changing: true
+        }
+    }
+}

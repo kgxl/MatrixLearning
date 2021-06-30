@@ -1,0 +1,105 @@
+com/tencent/matrix/trace/config/TraceConfig.java
+ com.tencent.matrix.trace.config.TraceConfig
+ com.tencent.matrix.trace.config.TraceConfig$1
+ com.tencent.matrix.trace.config.TraceConfig$Builder
+com/tencent/matrix/trace/tracer/EvilMethodTracer.java
+ com.tencent.matrix.trace.tracer.EvilMethodTracer
+ com.tencent.matrix.trace.tracer.EvilMethodTracer$AnalyseTask
+ com.tencent.matrix.trace.tracer.EvilMethodTracer$AnalyseTask$1
+com/tencent/matrix/trace/util/Utils.java
+ com.tencent.matrix.trace.util.Utils
+com/tencent/matrix/trace/items/MethodItem.java
+ com.tencent.matrix.trace.items.MethodItem
+com/tencent/matrix/trace/config/SharePluginInfo.java
+ com.tencent.matrix.trace.config.SharePluginInfo
+com/tencent/matrix/trace/core/LooperMonitor.java
+ com.tencent.matrix.trace.core.LooperMonitor
+ com.tencent.matrix.trace.core.LooperMonitor$LooperDispatchListener
+ com.tencent.matrix.trace.core.LooperMonitor$LooperPrinter
+com/tencent/matrix/trace/core/UIThreadMonitor.java
+ com.tencent.matrix.trace.core.UIThreadMonitor
+ com.tencent.matrix.trace.core.UIThreadMonitor$1
+ com.tencent.matrix.trace.core.UIThreadMonitor$2
+ com.tencent.matrix.trace.core.UIThreadMonitor$3
+ com.tencent.matrix.trace.core.UIThreadMonitor$4
+com/tencent/matrix/trace/listeners/LooperObserver.java
+ com.tencent.matrix.trace.listeners.LooperObserver
+com/tencent/matrix/trace/core/AppMethodBeat.java
+ com.tencent.matrix.trace.core.AppMethodBeat
+ com.tencent.matrix.trace.core.AppMethodBeat$1
+ com.tencent.matrix.trace.core.AppMethodBeat$2
+ com.tencent.matrix.trace.core.AppMethodBeat$3
+ com.tencent.matrix.trace.core.AppMethodBeat$4
+ com.tencent.matrix.trace.core.AppMethodBeat$IndexRecord
+ com.tencent.matrix.trace.core.AppMethodBeat$MethodEnterListener
+com/tencent/matrix/trace/BuildConfig.java
+ com.tencent.matrix.trace.BuildConfig
+com/tencent/matrix/trace/tracer/Tracer.java
+ com.tencent.matrix.trace.tracer.Tracer
+com/tencent/matrix/trace/view/FrameDecorator.java
+ com.tencent.matrix.trace.view.FrameDecorator
+ com.tencent.matrix.trace.view.FrameDecorator$1
+ com.tencent.matrix.trace.view.FrameDecorator$2
+ com.tencent.matrix.trace.view.FrameDecorator$2$1
+ com.tencent.matrix.trace.view.FrameDecorator$3
+ com.tencent.matrix.trace.view.FrameDecorator$4
+ com.tencent.matrix.trace.view.FrameDecorator$5
+ com.tencent.matrix.trace.view.FrameDecorator$6
+ com.tencent.matrix.trace.view.FrameDecorator$7
+ com.tencent.matrix.trace.view.FrameDecorator$8
+ com.tencent.matrix.trace.view.FrameDecorator$9
+com/tencent/matrix/trace/listeners/IDefaultConfig.java
+ com.tencent.matrix.trace.listeners.IDefaultConfig
+com/tencent/matrix/trace/listeners/IAppMethodBeatListener.java
+ com.tencent.matrix.trace.listeners.IAppMethodBeatListener
+com/tencent/matrix/trace/config/IssueFixConfig.java
+ com.tencent.matrix.trace.config.IssueFixConfig
+com/tencent/matrix/trace/listeners/IDoFrameListener.java
+ com.tencent.matrix.trace.listeners.IDoFrameListener
+ com.tencent.matrix.trace.listeners.IDoFrameListener$1
+ com.tencent.matrix.trace.listeners.IDoFrameListener$FrameReplay
+com/tencent/matrix/trace/util/TraceDataUtils.java
+ com.tencent.matrix.trace.util.TraceDataUtils
+ com.tencent.matrix.trace.util.TraceDataUtils$1
+ com.tencent.matrix.trace.util.TraceDataUtils$2
+ com.tencent.matrix.trace.util.TraceDataUtils$IStructuredDataFilter
+ com.tencent.matrix.trace.util.TraceDataUtils$TreeNode
+com/tencent/matrix/trace/view/FloatFrameView.java
+ com.tencent.matrix.trace.view.FloatFrameView
+ com.tencent.matrix.trace.view.FloatFrameView$LineChartView
+ com.tencent.matrix.trace.view.FloatFrameView$LineChartView$LineInfo
+com/tencent/matrix/trace/tracer/StartupTracer.java
+ com.tencent.matrix.trace.tracer.StartupTracer
+ com.tencent.matrix.trace.tracer.StartupTracer$AnalyseTask
+ com.tencent.matrix.trace.tracer.StartupTracer$AnalyseTask$1
+com/tencent/matrix/trace/tracer/FrameTracer.java
+ com.tencent.matrix.trace.tracer.FrameTracer
+ com.tencent.matrix.trace.tracer.FrameTracer$1
+ com.tencent.matrix.trace.tracer.FrameTracer$DropFrameListener
+ com.tencent.matrix.trace.tracer.FrameTracer$DropStatus
+ com.tencent.matrix.trace.tracer.FrameTracer$FPSCollector
+ com.tencent.matrix.trace.tracer.FrameTracer$FPSCollector$1
+ com.tencent.matrix.trace.tracer.FrameTracer$FrameCollectItem
+com/tencent/matrix/trace/util/ViewUtil.java
+ com.tencent.matrix.trace.util.ViewUtil
+ com.tencent.matrix.trace.util.ViewUtil$ViewInfo
+com/tencent/matrix/trace/constants/Constants.java
+ com.tencent.matrix.trace.constants.Constants
+ com.tencent.matrix.trace.constants.Constants$Type
+com/tencent/matrix/trace/hacker/ActivityThreadHacker.java
+ com.tencent.matrix.trace.hacker.ActivityThreadHacker
+ com.tencent.matrix.trace.hacker.ActivityThreadHacker$HackCallback
+ com.tencent.matrix.trace.hacker.ActivityThreadHacker$IApplicationCreateListener
+com/tencent/matrix/trace/tracer/ITracer.java
+ com.tencent.matrix.trace.tracer.ITracer
+com/tencent/matrix/trace/core/BeatLifecycle.java
+ com.tencent.matrix.trace.core.BeatLifecycle
+com/tencent/matrix/trace/tracer/AnrTracer.java
+ com.tencent.matrix.trace.tracer.AnrTracer
+ com.tencent.matrix.trace.tracer.AnrTracer$AnrHandleTask
+ com.tencent.matrix.trace.tracer.AnrTracer$AnrHandleTask$1
+ com.tencent.matrix.trace.tracer.AnrTracer$LagHandleTask
+com/tencent/matrix/trace/TracePlugin.java
+ com.tencent.matrix.trace.TracePlugin
+ com.tencent.matrix.trace.TracePlugin$1
+ com.tencent.matrix.trace.TracePlugin$2
