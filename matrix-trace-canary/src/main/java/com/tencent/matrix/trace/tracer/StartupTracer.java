@@ -104,12 +104,14 @@ public class StartupTracer extends Tracer implements IAppMethodBeatListener, Act
 
     @Override
     public void onActivityFocused(Activity activity) {
+        //这方法是在windowFocusedChange执行时回调
         if (ActivityThreadHacker.sApplicationCreateScene == Integer.MIN_VALUE) {
             Log.w(TAG, "start up from unknown scene");
             return;
         }
 
         String activityName = activity.getClass().getName();
+        // coldCost == 0时认为是冷启动状态
         if (isColdStartup()) {
             boolean isCreatedByLaunchActivity = ActivityThreadHacker.isCreatedByLaunchActivity();
             MatrixLog.i(TAG, "#ColdStartup# activity:%s, splashActivities:%s, empty:%b, "
@@ -127,6 +129,7 @@ public class StartupTracer extends Tracer implements IAppMethodBeatListener, Act
             createdTimeMap.put(key, uptimeMillis() - createdTime);
 
             if (firstScreenCost == 0) {
+                // 第一个Activity的onWindowFocusChanged()执行时统计首屏耗时
                 this.firstScreenCost = uptimeMillis() - ActivityThreadHacker.getEggBrokenTime();
             }
             if (hasShowSplashActivity) {

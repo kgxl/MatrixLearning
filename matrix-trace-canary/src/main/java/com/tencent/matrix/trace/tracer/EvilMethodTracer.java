@@ -78,6 +78,7 @@ public class EvilMethodTracer extends Tracer {
         long dispatchCost = (endNs - beginNs) / Constants.TIME_MILLIS_TO_NANO;
         try {
             if (dispatchCost >= evilThresholdMs) {
+                //根据indexRecord找到对应方法
                 long[] data = AppMethodBeat.getInstance().copyData(indexRecord);
                 long[] queueCosts = new long[3];
                 System.arraycopy(queueTypeCosts, 0, queueCosts, 0, 3);

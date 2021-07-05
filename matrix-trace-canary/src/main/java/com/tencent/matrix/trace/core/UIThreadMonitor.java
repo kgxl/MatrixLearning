@@ -21,7 +21,7 @@ public class UIThreadMonitor implements BeatLifecycle, Runnable {
     private static final String TAG = "Matrix.UIThreadMonitor";
     private static final String ADD_CALLBACK = "addCallbackLocked";
     private volatile boolean isAlive = false;
-    private long[] dispatchTimeMs = new long[4];
+    private long[] dispatchTimeMs = new long[4]; // 0:执行dispatchBegin系统当前时间 1:执行dispatchEnd系统当前时间 2:执行dispatchBegin线程运行时间 3:执行dispatchEnd线程运行时间
     private final HashSet<LooperObserver> observers = new HashSet<>();
     private volatile long token = 0L;
     private boolean isVsyncFrame = false;
@@ -241,6 +241,7 @@ public class UIThreadMonitor implements BeatLifecycle, Runnable {
         long intendedFrameTimeNs = startNs;
         if (isVsyncFrame) {
             doFrameEnd(token);
+            //开始一帧开始的时间
             intendedFrameTimeNs = getIntendedFrameTimeNs(startNs);
         }
 

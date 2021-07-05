@@ -223,7 +223,7 @@ public class LooperMonitor implements MessageQueue.IdleHandler {
 
 
     private void dispatch(boolean isBegin, String log) {
-
+        System.out.println("dispatch = "+log);
         for (LooperDispatchListener listener : listeners) {
             if (listener.isValid()) {
                 if (isBegin) {

@@ -76,6 +76,7 @@ public class AnrTracer extends Tracer {
             MatrixLog.v(TAG, "* [dispatchBegin] token:%s index:%s", token, anrTask.beginRecord.index);
         }
         long cost = (System.nanoTime() - token) / Constants.TIME_MILLIS_TO_NANO;
+        //分发开始的时候发送一个delay消息，如果在(Constants.DEFAULT_ANR - cost)时间内未删除消息，则发生了ANR
         anrHandler.postDelayed(anrTask, Constants.DEFAULT_ANR - cost);
         lagHandler.postDelayed(lagTask, Constants.DEFAULT_NORMAL_LAG - cost);
     }
@@ -152,6 +153,7 @@ public class AnrTracer extends Tracer {
 
         @Override
         public void run() {
+            //一旦执行到这里，说明发生了ANR,dump出堆栈信息
             System.out.println("AnrHandleTask run");
             long curTime = SystemClock.uptimeMillis();
             boolean isForeground = isForeground();
