@@ -5,6 +5,7 @@
 ## Resource Canary
 ## SQLite Lint
 ## IO Canary
+:smirk:[IO Canary说明](Matrix-IOCanary.md)
 ## Battery Canary
 ## Memory Hook
 ## Pthread Hook
